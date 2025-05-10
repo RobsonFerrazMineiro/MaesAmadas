@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homenagem Especial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -13,7 +14,7 @@
     }
 
     .mensagem {
-      max-width: 600px;
+      max-width: 700px;
       margin: auto;
       background-color: white;
       padding: 2rem;
@@ -24,53 +25,40 @@
     h1 {
       color: #ff69b4;
       font-family: "Caveat", cursive;
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       margin-bottom: 1rem;
     }
 
-    p {
+    .imagem {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+    }
+
+    .texto {
       font-size: 1.2rem;
       color: #444;
       margin-bottom: 1.2rem;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .assinatura {
-      margin-top: 2rem;
       font-style: italic;
       color: #777;
-    }
-
-    form {
       margin-top: 2rem;
-      background-color: #fff0f5;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
-    textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      resize: vertical;
-      margin-bottom: 1rem;
+    audio {
+      display: none;
     }
 
-    button {
-      padding: 10px 20px;
-      background-color: #ff69b4;
-      border: none;
-      color: white;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #ff1493;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .texto {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -78,34 +66,34 @@
   <div class="mensagem">
     <h1>Feliz Dia das Mães 💐</h1>
     <p id="nomeParagrafo">Querida mãe,</p>
-    <p>
-      Hoje é o seu dia, e mesmo que essa mensagem não tenha sido escrita com o
-      seu nome completo desde o começo, ela foi feita com todo o carinho que
-      você merece.
+
+    <img src="imagens/slide1.jpg" class="imagem" alt="Imagem especial para a mãe" />
+    <p class="texto">
+      Hoje é o seu dia, e essa mensagem é um abraço em forma de palavras. 
+      Que você sinta o carinho de cada pessoa que reconhece a mãe incrível que você é.
     </p>
-    <p>
-      Mãe é abrigo, é coragem, é o silêncio que acalma e o sorriso que
-      encoraja. Por isso, essa homenagem é pra você que faz do amor uma missão
-      diária.
+
+    <img src="imagens/slide2.jpg" class="imagem" alt="Imagem especial para a mãe" />
+    <p class="texto">
+      Mãe é quem acolhe, cuida, fortalece e transforma. Você faz isso todos os dias, com amor e coragem.
     </p>
+
+    <img src="imagens/slide3.jpg" class="imagem" alt="Imagem especial para a mãe" />
+    <p class="texto">
+      Obrigado por ser esse farol na vida de quem tem a sorte de te ter por perto. 💖
+    </p>
+
     <p class="assinatura">
-      Com carinho, de todos que reconhecem o quanto você é especial 💝
+      Com carinho, de todos que te admiram profundamente.
     </p>
 
-    <!-- Formulário de agradecimento -->
-    <form action="https://formsubmit.co/wilkson-cc@hotmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Nova mensagem da homenagem!">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://wilksonccp.github.io/mensagens/obrigado.html">
-
-      <p><strong>💌 Mande um “obrigado” para quem te enviou essa homenagem:</strong></p>
-      <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
-      <br>
-      <button type="submit">Enviar 💬</button>
-    </form>
+    <audio autoplay loop>
+      <source src="musica/fundo.mp3" type="audio/mpeg" />
+    </audio>
   </div>
 
   <script>
+    // Personaliza com o nome na URL
     const params = new URLSearchParams(window.location.search);
     const nome = params.get("nome");
 
