@@ -1,9 +1,9 @@
 const dados = {
-  "maria janiscleide": "cleide.html",
-  "maria vilma": "dVilma.html",
+  "maria janiscleide": "mariajaniscleide.html",
+  "maria vilma": "mariadvilma.html",
   "antonia jilineide": "deda.html",
-  "eliane": "eliane.html",
-  "maria cileide": "cileide.html",
+  "eliane": "elianevisinha.html",
+  "maria cileide": "mariacileide.html",
   "deusalise bento": "deusalise.html"
   // Adicione outras mães aqui com o nome digitado e o nome do arquivo correspondente
 };
