@@ -1,18 +1,137 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Feliz Dia das Mães</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>💐 Feliz Dia das Mães 💐</h1>
-    <p>Digite seu nome para receber uma mensagem especial:</p>
-    <input type="text" id="nomeInput" placeholder="Seu nome aqui...">
-    <button onclick="mostrarMensagem()">Ver mensagem</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz Dia das Mães</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-  <script src="script.js"></script>
-</body>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        text-align: center;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      }
+
+      h1 {
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-style: normal;
+        color: #ff69b4;
+      }
+
+      input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #ff1493;
+      }
+
+      .subtex {
+        font-family: "Sour Gummy", cursive;
+        font-size: 1.2em;
+        color: #f70980;
+      }
+
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+
+      .emoji {
+        position: fixed;
+        top: 0;
+        font-size: 2rem;
+        animation: fall 4s linear forwards;
+        z-index: 9999; /* agora sim, sempre por cima */
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="images/5b503e2c1918594bd5950cbb0dac9213.gif"
+        alt="Imagem fofa"
+      />
+      <h1>Feliz Dia das Mães</h1>
+      <div>
+        <p class="subtex">Como você é uma mãe especial</p>
+        <p class="subtex">criamos uma homenagem especialmente para você.</p>
+        <p>
+          Insira seus dois primeiros nomes no campo abaixo para receber seu
+          presente.
+        </p>
+      </div>
+      <input type="text" id="nomeInput" placeholder="Seu nome aqui..." />
+      <button onclick="mostrarMensagem()">Ver mensagem</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Script de corações caindo -->
+    <script>
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.textContent = "💖";
+        heart.classList.add("emoji");
+        heart.style.left = Math.random() * 100 + "vw";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 4000);
+      }, 500);
+    </script>
+  </body>
 </html>
