@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homenagem Especial</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #fcefee);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .mensagem {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #ff69b4;
+      font-family: "Caveat", cursive;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .assinatura {
+      margin-top: 2rem;
+      font-style: italic;
+      color: #777;
+    }
+
+    form {
+      margin-top: 2rem;
+      background-color: #fff0f5;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <div class="mensagem">
+    <h1>Feliz Dia das Mães 💐</h1>
+    <p id="nomeParagrafo">Querida mãe,</p>
+    <p>
+      Hoje é o seu dia, e mesmo que essa mensagem não tenha sido escrita com o
+      seu nome completo desde o começo, ela foi feita com todo o carinho que
+      você merece.
+    </p>
+    <p>
+      Mãe é abrigo, é coragem, é o silêncio que acalma e o sorriso que
+      encoraja. Por isso, essa homenagem é pra você que faz do amor uma missão
+      diária.
+    </p>
+    <p class="assinatura">
+      Com carinho, de todos que reconhecem o quanto você é especial 💝
+    </p>
+
+    <!-- Formulário de agradecimento -->
+    <form action="https://formsubmit.co/wilkson-cc@hotmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Nova mensagem da homenagem!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://wilksonccp.github.io/mensagens/obrigado.html">
+
+      <p><strong>💌 Mande um “obrigado” para quem te enviou essa homenagem:</strong></p>
+      <textarea name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..." required></textarea>
+      <br>
+      <button type="submit">Enviar 💬</button>
+    </form>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get("nome");
+
+    if (nome) {
+      const nomeFormatado = nome
+        .split(" ")
+        .map(n => n.charAt(0).toUpperCase() + n.slice(1))
+        .join(" ");
+      document.getElementById("nomeParagrafo").innerHTML = `Querida <strong>${nomeFormatado}</strong>,`;
+    }
+  </script>
+</body>
+</html>
