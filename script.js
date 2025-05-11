@@ -1,15 +1,15 @@
 const dados = {
   "maria janiscleide": "mariajaniscleide.html",
-  "maria vilma": "mariadvilma.html",
+  "maria vilma": "mariavilma.html",
   "antonia jilineide": "deda.html",
-  "eliane pereira": "elianevisinha.html",
-  "maria cileide": "mariacileide.html",
-  "deusalise bento": "deusalise.html"
+  "raimunda pereira": "elianevisinha.html",
+  "maria jucileide": "mariacileide.html",
   // Adicione outras mães aqui com o nome digitado e o nome do arquivo correspondente
 };
 
 function mostrarMensagem() {
-  const nome = document.getElementById('nomeInput').value.trim().toLowerCase();
+  const entrada = document.getElementById('nomeInput').value;
+  const nome = normalizarTexto(entrada);
 
   if (nome) {
     if (dados.hasOwnProperty(nome)) {
@@ -22,3 +22,14 @@ function mostrarMensagem() {
     alert("Por favor, digite somente o primeiro e o segundo nomes.");
   }
 }
+// Função para normalizar o texto removendo acentos e espaços extras
+// e convertendo para minúsculas
+function normalizarTexto(texto) {
+  return texto
+    .normalize("NFD") // Remove acentos
+    .replace(/[\u0300-\u036f]/g, "") // Remove caracteres diacríticos
+    .replace(/\s+/g, " ") // Substitui múltiplos espaços por 1
+    .trim()
+    .toLowerCase();
+}
+
