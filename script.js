@@ -1,14 +1,10 @@
 const dados = {
-  "maria janiscleide": "mariajaniscleide.html",
-  "maria vilma": "mariavilma.html",
-  "antonia jilineide": "deda.html",
-  "raimunda pereira": "elianevisinha.html",
-  "maria jucileide": "mariacileide.html",
+  "maria de lourdes": "mariadelourdes.html",
   // Adicione outras mães aqui com o nome digitado e o nome do arquivo correspondente
 };
 
 function mostrarMensagem() {
-  const entrada = document.getElementById('nomeInput').value;
+  const entrada = document.getElementById("nomeInput").value;
   const nome = normalizarTexto(entrada);
 
   if (nome) {
@@ -32,4 +28,3 @@ function normalizarTexto(texto) {
     .trim()
     .toLowerCase();
 }
-
